@@ -1,0 +1,9 @@
+
+projekt mit yeoman erzeugt und ui-router eingebunden:
+siehe:   http://franky.co/2013/11/angular-yeoman-coffeescript-sass-jade
+
+einfaches routing eingebaut, siehe: http://scotch.io/tutorials/javascript/angular-routing-using-ui-router
+
+
+
+

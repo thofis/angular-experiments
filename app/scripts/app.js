@@ -19,4 +19,10 @@ angular.module('angularExperimentsApp', [
         templateUrl: 'views/about.html'
     });
 
+    $stateProvider.state("animation", {
+        url: '/animation',
+        templateUrl: "../components/animation/animation.html",
+        controller: 'AnimationCtrl'
+    })
+
 });

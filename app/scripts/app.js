@@ -21,7 +21,7 @@ angular.module('angularExperimentsApp', [
 
     $stateProvider.state("animation", {
         url: '/animation',
-        templateUrl: "../components/animation/animation.html",
+        templateUrl: "components/animation/animation.html",
         controller: 'AnimationCtrl'
     })
 

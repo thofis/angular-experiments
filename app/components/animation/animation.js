@@ -1,10 +1,25 @@
 'use strict';
 
 angular.module('angularExperimentsApp')
-    .controller('AnimationCtrl', function ($scope, CountriesService) {
+    .controller('AnimationCtrl', function ($scope, CountriesService, country) {
+
         CountriesService.getCountries().then(function(countries) {
             $scope.countries = countries;
         })
+
+        $scope.isCountryListHidden = false;
+        $scope.isCountryDetailsHidden = country ? false : true;
+        $scope.currentCountry = country;
+
+        $scope.hideCountryList = function() {
+            $scope.isCountryListHidden = true;
+        }
+
+        $scope.showCountryList = function () {
+            $scope.isCountryListHidden = false;
+        }
+
+
     });
 
 

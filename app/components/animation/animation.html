@@ -2,13 +2,23 @@
   <h1>Animation</h1>
 </div>
 
-<div>
-    <h2>List of all Countries</h2>
-    <ul>
-        <li ng-repeat="country in countries">
-            {{country.name}}
-        </li>
-    </ul>
+<div class="container">
+    <a ng-click="hideCountryList()" ng-disabled="isCountryListHidden" class="btn btn-lg btn-primary">Hide Countries</a>
+    <a ng-click="showCountryList()" ng-disabled="!isCountryListHidden" class="btn btn-lg btn-primary">Show Countries</a>
+</div>
+
+<div class="container">
+    <div class="col-md-6 countryList" ng-hide="isCountryListHidden">
+        <h2>List of all Countries</h2>
+        <ul>
+            <li ng-repeat="country in countries" class="animCountries" >
+                <a ng-href="#/animation/{{ country.name }}">{{country.name}}
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-6 countryDetails" ng-hide="isCountryDetailsHidden">
+        <h1>{{currentCountry}}</h1>
+    </div>
 </div>
 
 

@@ -3,7 +3,8 @@
 angular.module('angularExperimentsApp', [
     'ngCookies',
     'ngResource',
-    'ui.router'
+    'ui.router',
+    'ngAnimate'
 ]).config(function ($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
@@ -22,7 +23,23 @@ angular.module('angularExperimentsApp', [
     $stateProvider.state("animation", {
         url: '/animation',
         templateUrl: "components/animation/animation.html",
-        controller: 'AnimationCtrl'
-    })
+        controller: 'AnimationCtrl',
+        resolve: {
+            country: function() {
+                return null;
+            }
+        }
+    });
+
+    $stateProvider.state("animationDetails", {
+        url: "/animation/:country",
+        templateUrl: "components/animation/animation.html",
+        controller: 'AnimationCtrl',
+        resolve: {
+            country: function ($stateParams) {
+                return $stateParams.country;
+            }
+        }
+    });
 
 });
